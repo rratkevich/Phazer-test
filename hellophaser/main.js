@@ -5,18 +5,26 @@ var sprite;
 function preload() {
 
     game.load.spritesheet('brilliant', 'img/bri_big_anim_start.png', 392, 370, 4);
-    game.load.spritesheet('brilliant', 'img/bri_big_anim_middle.png', 440, 430, 4);
-    game.load.spritesheet('brilliant', 'img/bri_big_anim_finish.png', 392, 370, 4);
+    game.load.spritesheet('middle', 'img/bri_big_anim_middle.png', 449, 430, 4);
+    game.load.spritesheet('finish', 'img/bri_big_anim_finish.png', 326, 330, 4);
 }
 
 function create() {
 
-    this.brilliant = game.add.sprite(100, 100, 'brilliant');
-    this.brilliant.scale.setTo(0.5, 0.5);
-    this.brilliant.animations.add('rotate', [1,2,3,4], 12, true);
+    this.brilliant = game.add.sprite(450, 450, 'brilliant');
+    this.brilliant.scale.setTo(0.4, 0.4);
+    this.brilliant.animations.add('rotate', [1,2,3,4], 4, true);
     this.brilliant.animations.play('rotate');
-    // this.brilliant = game.add.tween(sprite).to({ x: 200 }, 10000, Phaser.Easing.Linear.None, true);
+    // this.brilliant = game.add.tween(sprite).to({ x: 200, y:200 }, 10000, Phaser.Easing.Linear.None, true);
+    this.middle = game.add.sprite(300,300, 'middle');
+    this.middle.scale.setTo(0.4, 0.4);
+    this.middle.animations.add('rotate', [1,2,3,4], 4, true);
+    this.middle.animations.play('rotate');
 
+    this.finish = game.add.sprite(50,50, 'finish');
+    this.finish.scale.setTo(0.4, 0.4);
+    this.finish.animations.add('rotate', [1,2,3,4], 4, true);
+    this.finish.animations.play('rotate');
 }
 
 function update() {
